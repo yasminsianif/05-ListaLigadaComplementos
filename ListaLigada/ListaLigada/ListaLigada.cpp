@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>//yasmin siani
 using namespace std;
 
 // definicao de tipo
@@ -70,7 +70,7 @@ void menu()
 
 void inicializar()
 {
-	// se a lista já possuir elementos
+	// se a lista jÃ¡ possuir elementos
 // libera a memoria ocupada
 	NO* aux = primeiro;
 	while (aux != NULL) {
@@ -129,102 +129,7 @@ void inserirElemento()
 	{
 		primeiro = novo;
 	}
-	else if (posicaoElemento(novo->valor) == NULL)
-	{
-		if (novo->valor < primeiro->valor)
-		{
-			novo->prox = primeiro;
-			primeiro = novo;
-			cout << "Numero adicionado\n";
-		}
-		else {
-			NO* aux = primeiro;
-			NO* anterior = NULL;
-			while (aux != NULL) {
-				if (aux->valor > novo->valor) {
-					break;
-				}
-				anterior = aux;
-				aux = aux->prox;
-			}
-			anterior->prox = novo;
-			novo->prox = aux;
-			cout << "Numero adicionado com sucesso\n";
-		}
-	}
-	else {
-		cout << "Numero ja existente na lista\n";
-	}
-
-}
-
-void excluirElemento()
-{
-	int excluir;
-	cout << "Digite o valor que deseja excluir: ";
-	cin >> excluir;
-
-	if (posicaoElemento(excluir) == NULL) {
-		cout << "Elemento nao existente\n";
-	}
-	else {
-		NO* atual = primeiro;
-		if (atual->valor == excluir)
-		{
-			primeiro = atual->prox;
-		}
-		else {
-			NO* anterior = NULL;
-			NO* proximo = NULL;
-			while (atual != NULL) {
-				if (atual->valor == excluir)
-				{
-					proximo = atual->prox;
-					break;
-				}
-				anterior = atual;
-				atual = atual->prox;
-			}
-			if (anterior != NULL) {
-				anterior->prox = atual->prox;
-			}
-		}
-		free(atual);
-		cout << "Valor excluido\n";
-	}
-}
-
-void buscarElemento()
-{
-	int busca;
-	cout << "Digite o valor que deseja buscar: ";
-	cin >> busca;
-
-	if (posicaoElemento(busca) == NULL) {
-		cout << "Elemento nao existente\n";
-	}
-	else {
-		cout << "Elemento existente\n";
-	}
-}
-
-NO* posicaoElemento(int numero)
-{
-	NO* aux = primeiro;
-	while (aux != NULL) {
-		if (aux->valor > numero) {
-			aux = NULL;
-			break;
-		}
-		if (aux->valor == numero)
-		{
-			break;
-		}
-		aux = aux->prox;
-	}
-	return aux;
-}
-else
+	else
 	{
 		// procura o final da lista
 		NO* aux = primeiro;
@@ -235,4 +140,12 @@ else
 	}
 }
 
+void excluirElemento()
+{
 
+}
+
+void buscarElemento()
+{
+
+}
