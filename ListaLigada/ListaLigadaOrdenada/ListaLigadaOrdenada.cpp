@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>//yasmin siani
 using namespace std;
 
 // definicao de tipo
@@ -16,7 +16,7 @@ void exibirQuantidadeElementos();
 void exibirElementos();
 void inserirElemento();
 void excluirElemento();
-void buscarrElemento();
+void buscarElemento();
 NO* posicaoElemento(int numero);
 //--------------------------
 
@@ -36,7 +36,7 @@ void menu()
 		cout << "1 - Inicializar Lista \n";
 		cout << "2 - Exibir quantidade de elementos \n";
 		cout << "3 - Exibir elementos \n";
-		cout << "4 - buscarr elemento \n";
+		cout << "4 - Buscar elemento \n";
 		cout << "5 - Inserir elemento \n";
 		cout << "6 - Excluir elemento \n";
 		cout << "7 - Sair \n\n";
@@ -52,7 +52,7 @@ void menu()
 			break;
 		case 3: exibirElementos();
 			break;
-		case 4: buscarrElemento();
+		case 4: buscarElemento();
 			break;
 		case 5: inserirElemento();
 			break;
@@ -70,7 +70,7 @@ void menu()
 
 void inicializar()
 {
-	// se a lista já possuir elementos
+	// se a lista jÃ¡ possuir elementos
 // libera a memoria ocupada
 	NO* aux = primeiro;
 	while (aux != NULL) {
@@ -134,7 +134,7 @@ void inserirElemento()
 		{
 			novo->prox = primeiro;
 			primeiro = novo;
-			cout << "Numero adicionado \n";
+			cout << "Numero adicionado com sucesso\n";
 		}
 		else {
 			NO* aux = primeiro;
@@ -148,11 +148,11 @@ void inserirElemento()
 			}
 			anterior->prox = novo;
 			novo->prox = aux;
-			cout << "Numero adicionado\n";
+			cout << "Numero adicionado com sucesso\n";
 		}
 	}
 	else {
-		cout << "Numero ja existente\n";
+		cout << "Numero ja existente na lista\n";
 	}
 
 }
@@ -164,7 +164,7 @@ void excluirElemento()
 	cin >> excluir;
 
 	if (posicaoElemento(excluir) == NULL) {
-		cout << "Elemento nao existente\n";
+		cout << "O elemento nao existe na lista\n";
 	}
 	else {
 		NO* atual = primeiro;
@@ -193,21 +193,21 @@ void excluirElemento()
 	}
 }
 
-void buscarrElemento()
+void buscarElemento()
 {
-	int buscar;
+	int busca;
 	cout << "Digite o valor que deseja buscar: ";
-	cin >> buscar;
+	cin >> busca;
 
-	if (posicaoElemento(buscar) == NULL) {
-		cout << "Elemento nao existente\n";
+	if (posicaoElemento(busca) == NULL) {
+		cout << "O elemento nao existe na lista\n";
 	}
 	else {
-		cout << "Elemento existente\n";
+		cout << "O elemento existe na lista\n";
 	}
 }
 
-NO* posicaoElemento(int numero)
+NO* posicaoElemento(int numero) 
 {
 	NO* aux = primeiro;
 	while (aux != NULL) {
@@ -222,5 +222,3 @@ NO* posicaoElemento(int numero)
 		aux = aux->prox;
 	}
 	return aux;
-}
-
